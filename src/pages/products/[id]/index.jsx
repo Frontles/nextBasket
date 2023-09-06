@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Layout from '@/pages/layout';
 import Image from 'next/image';
 
-function productDetail() {
+function ProductDetail() {
 
     const router = useRouter()
     const dispatch = useDispatch();
@@ -15,7 +15,7 @@ function productDetail() {
     useEffect(
         () => {
             dispatch(fetchProduct(router.query.id))
-        }, [router.query.id])
+        }, [dispatch, router.query.id])
 
 
     const veri = useSelector(product)
@@ -26,7 +26,7 @@ function productDetail() {
 
             <div className='container flex items-center justify-center h-full mt-20 '>
                 <div className='space-y-4 flex flex-col items-center' >
-                    <Image className='items-center' src={veri.image} width={300} height={400} objectFit='cover' />
+                    <Image className='items-center' src={veri.image} width={300} height={400} objectFit='cover' alt='img' />
                     <h1 className='text-3xl font-bold '>{veri.title}</h1>
                     <p>{veri.description}</p>
                     <AddBasketButton product={veri} />
@@ -36,4 +36,4 @@ function productDetail() {
     )
 }
 
-export default productDetail
+export default ProductDetail

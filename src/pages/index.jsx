@@ -5,6 +5,7 @@ import Layout from './layout'
 import { products, fetchProducts } from '@/store/ProductsSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import Image from 'next/image'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -15,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     dispatch(fetchProducts())
 
-  }, [])
+  }, [dispatch])
 
   const veri = useSelector(products)
 
@@ -35,7 +36,7 @@ export default function Home() {
           {
             veri.map((product, index) => (
               <div className="max-w-md rounded overflow-hidden flex flex-col items-center shadow-lg m-auto bg-slate-400 my-4" key={index}>
-                {<img className='items-center w-60 h-full' src={product.image} />}
+                {<Image className='items-center w-60 h-full' src={product.image} alt="naber" />}
                 <div className='  flex flex-wrap flex-col items-center justify-between px-2 py-4'>
                   <h4>{truncateOverview(product.title, 50)}</h4>
                   <p>{product.price} TL </p>
