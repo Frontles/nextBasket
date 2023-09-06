@@ -1,6 +1,6 @@
 import AddBasketButton from '@/Components/AddBasketButton'
 import { product, fetchProduct } from '@/store/ProductsSlice';
-import React, { Suspense, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux';
 import Layout from '@/pages/layout';
