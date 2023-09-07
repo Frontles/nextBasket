@@ -1,7 +1,4 @@
 import Header from "@/components/Header"
-
-
-
 function Layout({ children }) {
 
 

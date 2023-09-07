@@ -1,4 +1,4 @@
-import AddBasketButton from '@/components/AddBasketButton'
+import AddBasketButton from '../components/AddBasketButton'
 import Link from 'next/link'
 import Layout from './layout'
 import Image from 'next/image'

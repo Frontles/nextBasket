@@ -1,7 +1,7 @@
-import AddBasketButton from '@/components/AddBasketButton';
+import AddBasketButton from '../components/AddBasketButton';
 import React from 'react'
 import { useRouter } from 'next/router'
-import Layout from '@/pages/layout';
+import Layout from '../pages/layout';
 import Image from 'next/image';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
