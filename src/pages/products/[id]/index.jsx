@@ -28,7 +28,8 @@ function ProductDetail() {
                             <Image className='items-center' src={data?.data?.image} width={300} height={400} objectFit='cover' alt='img' />
                             <h1 className='text-3xl font-bold '>{data?.data?.title}</h1>
                             <p>{data?.data?.description}</p>
-                            <AddBasketButton product={data} />
+                            <p>{data?.data?.price} TL</p>
+                            <AddBasketButton product={data.data} />
                         </div>
                     </div>
             }

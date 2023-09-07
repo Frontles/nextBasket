@@ -1,5 +1,3 @@
-import Header from '@/Components/Header'
-import { store } from '@/store/store'
 import { Html, Head, Main, NextScript } from 'next/document'
 
 
