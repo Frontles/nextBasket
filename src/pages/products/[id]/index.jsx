@@ -1,4 +1,4 @@
-import AddBasketButton from '@/Components/AddBasketButton'
+import AddBasketButton from '@/components/AddBasketButton'
 import React from 'react'
 import { useRouter } from 'next/router'
 import Layout from '@/pages/layout';
@@ -7,6 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
 function ProductDetail() {
+
     const router = useRouter()
     const id = router.query.id
 
