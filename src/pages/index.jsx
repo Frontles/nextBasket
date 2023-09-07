@@ -3,7 +3,6 @@ import Layout from './layout'
 import Image from 'next/image'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import AddBasketButton from '../components/AddBasketButton'
 export default function Home() {
 
 
