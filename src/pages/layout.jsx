@@ -1,4 +1,4 @@
-import NavBar from "../components/header"
+import NavBar from "../components2/header"
 function Layout({ children }) {
 
     return (
