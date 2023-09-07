@@ -1,9 +1,9 @@
-
+import NavBar from "@/components/header"
 function Layout({ children }) {
 
     return (
         <main className="text-black">
-            <Header />
+            <NavBar />
 
             {children}
         </main>
