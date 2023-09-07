@@ -1,37 +1,37 @@
 import AddBasketButton from '@/Components/AddBasketButton'
-import { product, fetchProduct } from '@/store/ProductsSlice';
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useRouter } from 'next/router'
-import { useDispatch, useSelector } from 'react-redux';
 import Layout from '@/pages/layout';
 import Image from 'next/image';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
 function ProductDetail() {
-
     const router = useRouter()
-    const dispatch = useDispatch();
+    const id = router.query.id
 
+    /*
+  useQuery([“products],id) ekler misin birde axios.get(`url/products/${id}`), {
+         enabled: !!id yapar mısın
+    */
 
-    useEffect(
-        () => {
-            dispatch(fetchProduct(router.query.id))
-        }, [dispatch, router.query.id])
+    const { data, error, isLoading, isFetching } = useQuery(["product", id], () => axios.get(`https://fakestoreapi.com/products/${id}`), { enabled: !!id });
 
-
-    const veri = useSelector(product)
 
 
     return (
         <Layout>
-
-            <div className='container flex items-center justify-center h-full mt-20 '>
-                <div className='space-y-4 flex flex-col items-center' >
-                    <Image className='items-center' src={veri.image} width={300} height={400} objectFit='cover' alt='img' />
-                    <h1 className='text-3xl font-bold '>{veri.title}</h1>
-                    <p>{veri.description}</p>
-                    <AddBasketButton product={veri} />
-                </div>
-            </div>
+            {
+                isLoading || isFetching ? <div className='absolute text-white duration-700 bg-black opacity-40 w-full h-full flex items-center justify-center'> Yükleniyor... </div>
+                    : <div className='container flex items-center justify-center h-full mt-20 '>
+                        <div className='space-y-4 flex flex-col items-center' >
+                            <Image className='items-center' src={data?.data?.image} width={300} height={400} objectFit='cover' alt='img' />
+                            <h1 className='text-3xl font-bold '>{data?.data?.title}</h1>
+                            <p>{data?.data?.description}</p>
+                            <AddBasketButton product={data} />
+                        </div>
+                    </div>
+            }
         </Layout>
     )
 }
