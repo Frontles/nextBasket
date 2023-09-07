@@ -1,11 +1,11 @@
 
 import React from 'react'
 import { useRouter } from 'next/router'
-import Layout from '../../layout';
+import Layout from '@/layout';
 import Image from 'next/image';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import AddBasketButton from '../../../components/addBasketButton'
+import AddBasketButton from '@/components/AddBasketButton'
 
 function ProductDetail() {
 
