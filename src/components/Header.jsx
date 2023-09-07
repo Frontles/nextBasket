@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import ProfileBar from './profileBar'
+import ProfileBar from './ProfileBar'
+
 import Basket from './Basket'
 
 function NavBar() {
