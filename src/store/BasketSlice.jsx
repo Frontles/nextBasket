@@ -11,6 +11,9 @@ const basketSlice = createSlice({
     reducers: {
         AddBasket: (state, action) => {
             state.basket = [...state.basket, action.payload]
+        },
+        ResetBasket: (state, action) => {
+            state.basket = []
         }
     },
 

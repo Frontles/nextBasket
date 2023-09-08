@@ -5,9 +5,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'fakestoreapi.com',
+        hostname: 'image.tmdb.org',
         port: '',
-        pathname: '/img/**',
+        pathname: '/**',
       },
     ],
   },
